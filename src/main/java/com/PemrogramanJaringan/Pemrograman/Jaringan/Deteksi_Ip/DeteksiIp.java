@@ -9,17 +9,17 @@ public class DeteksiIp {
     // Method untuk menentukan kelas IP
     public static String getIPClass(String ip) {
         String[] parts = ip.split("\\.");
-        int firstOctet = Integer.parseInt(parts[0]);
+        int oktet = Integer.parseInt(parts[0]);
 
-        if (firstOctet >= 1 && firstOctet <= 126) {
+        if (oktet >= 1 && oktet <= 126) {
             return "Kelas A";
-        } else if (firstOctet >= 128 && firstOctet <= 191) {
+        } else if (oktet >= 128 && oktet <= 191) {
             return "Kelas B";
-        } else if (firstOctet >= 192 && firstOctet <= 223) {
+        } else if (oktet >= 192 && oktet <= 223) {
             return "Kelas C";
-        } else if (firstOctet >= 224 && firstOctet <= 239) {
+        } else if (oktet >= 224 && oktet <= 239) {
             return "Kelas D (Multicast)";
-        } else if (firstOctet >= 240 && firstOctet <= 255) {
+        } else if (oktet >= 240 && oktet <= 255) {
             return "Kelas E (Eksperimental)";
         } else {
             return "Tidak diketahui";
@@ -29,20 +29,20 @@ public class DeteksiIp {
     // Method untuk mengubah IP ke bentuk biner
     public static String ipToBinary(String ip) {
         String[] parts = ip.split("\\.");
-        StringBuilder binaryIP = new StringBuilder();
+        StringBuilder biner = new StringBuilder();
 
         for (int i = 0; i < parts.length; i++) {
             int octet = Integer.parseInt(parts[i]);
             String binaryOctet = String.format("%8s", Integer.toBinaryString(octet))
                     .replace(' ', '0');
-            binaryIP.append(binaryOctet);
+            biner.append(binaryOctet);
 
             if (i < parts.length - 1) {
-                binaryIP.append(".");
+                biner.append(".");
             }
         }
 
-        return binaryIP.toString();
+        return biner.toString();
     }
 
     public static void main(String[] args) {
