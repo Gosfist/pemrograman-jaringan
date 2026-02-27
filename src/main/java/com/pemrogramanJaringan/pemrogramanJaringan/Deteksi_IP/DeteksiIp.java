@@ -1,4 +1,4 @@
-package com.PemrogramanJaringan.Pemrograman.Jaringan.Deteksi_Ip;
+package com.pemrogramanJaringan.pemrogramanJaringan.Deteksi_IP;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

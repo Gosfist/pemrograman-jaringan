@@ -8,11 +8,11 @@
 		<version>4.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.PemrogramanJaringan</groupId>
-	<artifactId>Pemrograman-Jaringan</artifactId>
+	<groupId>com.pemrogramanJaringan</groupId>
+	<artifactId>pemrogramanJaringan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Pemrograman-Jaringan</name>
-	<description>Demo project for Spring Boot</description>
+	<name>pemrogramanJaringan</name>
+	<description>Kumpulan Tugas Pemrograman Jaringan</description>
 	<url/>
 	<licenses>
 		<license/>

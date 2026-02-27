@@ -1,4 +1,4 @@
-package com.PemrogramanJaringan.Pemrograman.Jaringan;
+package com.pemrogramanJaringan.pemrogramanJaringan;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
