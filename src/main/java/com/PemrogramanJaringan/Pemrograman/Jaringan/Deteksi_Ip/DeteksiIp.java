@@ -62,7 +62,7 @@ public class DeteksiIp {
             System.out.println("Bentuk Biner IP : " + ipToBinary(ip));
 
         } catch (UnknownHostException e) {
-            System.out.println("URL tidak valid atau tidak ditemukan.");
+            System.out.println("Nama Domain tidak valid atau tidak ditemukan.");
         }
 
         input.close();
