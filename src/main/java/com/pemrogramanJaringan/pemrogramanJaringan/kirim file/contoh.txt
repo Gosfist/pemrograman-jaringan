@@ -1,0 +1,2 @@
+Ini file contoh dari server.
+File ini akan dikirim ke client secara sederhana.
