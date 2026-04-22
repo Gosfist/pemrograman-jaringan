@@ -8,7 +8,8 @@ import java.net.Socket;
 public class server {
     private static final String HOST = "10.8.0.37";
     private static final int PORT = 12345;
-    private static final String NAMA_FILE = "kirim file" + File.separator + "contoh.txt";
+    private static final int JUMLAH_CLIENT = 5;
+    private static final String NAMA_FILE = "kirim file" + File.separator + "file.pptx";
 
     public static void main(String[] args) {
         File file = new File(NAMA_FILE);
@@ -23,14 +24,18 @@ public class server {
             serverSocket.bind(new InetSocketAddress(HOST, PORT));
 
             System.out.println("Server aktif di " + HOST + ":" + PORT);
-            System.out.println("Menunggu satu client untuk menerima file...");
+            System.out.println("Menunggu " + JUMLAH_CLIENT + " client untuk menerima file...");
 
-            try (Socket socket = serverSocket.accept()) {
-                System.out.println("Client terhubung: " + socket.getInetAddress());
-                kirimFile(socket, file);
-                System.out.println("File berhasil dikirim ke client.");
-                System.out.println("Server selesai.");
+            for (int i = 1; i <= JUMLAH_CLIENT; i++) {
+                try (Socket socket = serverSocket.accept()) {
+                    System.out.println("Client " + i + " terhubung: " + socket.getInetAddress());
+                    kirimFile(socket, file);
+                    System.out.println("File berhasil dikirim ke client " + i + ".");
+                }
             }
+
+            System.out.println("Semua client sudah menerima file.");
+            System.out.println("Server selesai.");
         } catch (Exception e) {
             System.out.println("Terjadi kesalahan di server: " + e.getMessage());
         }
